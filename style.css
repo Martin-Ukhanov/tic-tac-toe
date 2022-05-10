@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,800&display=swap');
+
+:root {
+    --color-1: #101820FF;
+    --color-2: #F2AA4CFF;
+    --border-radius: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-1);
+    color: var(--color-2);
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: var(--color-1);
+    background-color: var(--color-2);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#square-grid {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    border: 3px solid var(--color-2);
+}
+
+#square-grid :nth-child(1) {
+    border-top: none;
+    border-left: none;
+}
+
+#square-grid :nth-child(2) {
+    border-top: none;
+}
+
+#square-grid :nth-child(3) {
+    border-top: none;
+    border-right: none;
+}
+
+#square-grid :nth-child(4) {
+    border-left: none;
+}
+
+#square-grid :nth-child(6) {
+    border-right: none;
+}
+
+#square-grid :nth-child(7) {
+    border-bottom: none;
+    border-left: none;
+}
+
+#square-grid :nth-child(8) {
+    border-bottom: none;
+}
+
+#square-grid :nth-child(9) {
+    border-right: none;
+    border-bottom: none;
+}
+
+footer {
+    margin-top: auto;
+}
+
+#result-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.1s;
+    z-index: 1;
+}
+
+#result-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#result-form {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 1rem;
+    color: var(--color-1);
+    background-color: var(--color-2);
+}
+
+button {
+    width: 100%;
+    font-size: inherit;
+    padding: 1rem;
+    border: none;
+    color: var(--color-2);
+    background-color: var(--color-1);
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#overlay.active {
+    display: block;
+}
