@@ -3,6 +3,7 @@
 :root {
     --color-1: #101820FF;
     --color-2: #F2AA4CFF;
+    --border-radius: 6px;
 }
 
 * {
